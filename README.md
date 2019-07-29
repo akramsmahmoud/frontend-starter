@@ -1,2 +1,2 @@
-# trello-react
-clone trello using react
+# webpack & Babel 
+My kit starter
