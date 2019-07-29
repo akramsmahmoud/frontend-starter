@@ -5,11 +5,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require("webpack-md5-hash");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 
 module.exports = {
     entry: {
-        main: './assets/js/main.js'
+        main: './public/js/main.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -36,7 +37,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [
+    plugins: [        
         new CleanWebpackPlugin('dist', {}),
         new MiniCssExtractPlugin({
             filename: "style.css"
@@ -44,13 +45,16 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: false,
             hash: true,
-            template: './assets/index.html',
+            template: './public/index.html',
             filename: 'index.html'
         }),
-        new WebpackMd5Hash()
-    ],
-    devServer: {
-        contentBase: './src',
-        publicPath: '/output'
-    }
+        new WebpackMd5Hash(),
+        new BrowserSyncPlugin({
+            // browse to http://localhost:3000/ during development,
+            // ./public directory is being served
+            host: 'localhost',
+            port: 3000,
+            server: { baseDir: ['dist'] }
+          }),
+    ]
 };
