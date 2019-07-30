@@ -1,8 +1,16 @@
-language: node_modules
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm run test
+  - npm run build
 deploy:
-  provider: heroku
-  api_key:
-    secure: 3656513b-1203-4d5a-925b-362bc39d6782
-  app: webpack-config
+  provider: pages
+  skip_cleanup: true
+  github_token: 7e8073c7e99d860259f5262cc15f9c1f2cd84da7
+  local_dir: build
   on:
-    repo: akramsmahmoud/webpack-config
+    branch: master
