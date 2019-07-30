@@ -1,16 +1,7 @@
 language: node_js
 node_js:
-  - "stable"
-cache:
-  directories:
-  - node_modules
-script:
-  - npm run test
-  - npm run build
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: 7e8073c7e99d860259f5262cc15f9c1f2cd84da7
-  local_dir: build
-  on:
-    branch: master
+  - '6'
+before_script:
+  - npm install -g codecov
+after_success:
+  - codecov
