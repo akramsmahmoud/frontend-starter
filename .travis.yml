@@ -1,8 +1,7 @@
-language: node_modules
-deploy:
-  provider: heroku
-  api_key:
-    secure: 3656513b-1203-4d5a-925b-362bc39d6782
-  app: webpack-config
-  on:
-    repo: akramsmahmoud/webpack-config
+language: node_js
+node_js:
+  - '6'
+before_script:
+  - npm install -g codecov
+after_success:
+  - codecov
