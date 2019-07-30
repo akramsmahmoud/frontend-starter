@@ -2,7 +2,8 @@
   "name": "react-app",
   "version": "1.0.0",
   "main": "main.js",
-  "repository": "https://github.com/akramsmahmoud/trello-react.git",
+  "repository": "https://github.com/akramsmahmoud/webpack-config.git",
+  "homepage": "https://akramsmahmoud.github.io/webpack-config/",
   "author": "Akram Hussein <hussein.akrammahmoudebrahim@ynap.com>",
   "license": "MIT",
   "scripts": {
