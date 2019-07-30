@@ -1,6 +1,5 @@
 import '../scss/main.scss';
 
+import generatePrime from '../js/common/header'
 
-
-console.log("Akram MAsr");
-console.log("Akram MAsr 2 for new branch  2 2s2");
+generatePrime(2, 10);
