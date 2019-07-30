@@ -5,6 +5,11 @@
             {
                 "targets": {
                     "chrome": "60"
+                },
+                "test": {
+                    "plugins": [
+                        "istanbul"
+                    ]
                 }
             }
         ]

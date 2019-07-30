@@ -119,18 +119,6 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
-/***/ "./public/js/common/header.js":
-/*!************************************!*\
-  !*** ./public/js/common/header.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nclass Header {\n  constructor() {\n    console.log(\"Header intitalized\");\n  }\n\n}\n\nexports.default = Header;\n\n//# sourceURL=webpack:///./public/js/common/header.js?");
-
-/***/ }),
-
 /***/ "./public/js/main.js":
 /*!***************************!*\
   !*** ./public/js/main.js ***!
@@ -139,7 +127,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ../scss/main.scss */ \"./public/scss/main.scss\");\n\nvar _header = __webpack_require__(/*! ./common/header */ \"./public/js/common/header.js\");\n\nvar _header2 = _interopRequireDefault(_header);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nnew _header2.default();\nconsole.log(\"Akram MAsr\");\n\n//# sourceURL=webpack:///./public/js/main.js?");
+eval("\n\n__webpack_require__(/*! ../scss/main.scss */ \"./public/scss/main.scss\");\n\nconsole.log(\"Akram MAsr\");\n\n//# sourceURL=webpack:///./public/js/main.js?");
 
 /***/ }),
 

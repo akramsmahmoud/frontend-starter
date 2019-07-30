@@ -1,0 +1,19 @@
+
+{
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "public/**/*.spec.js"
+  ],
+  "reporter": [
+    "lcov",
+    "text"
+  ],
+  "require": [
+    "babel-register"
+  ],
+  "cache": true,
+  "sourceMap": false,
+  "instrument": false
+}
