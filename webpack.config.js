@@ -46,7 +46,7 @@ module.exports = {
             inject: false,
             hash: true,
             template: './public/index.html',
-            filename: 'index.html'
+            filename: '../index.html'
         }),
         new WebpackMd5Hash(),
         new BrowserSyncPlugin({
@@ -54,7 +54,7 @@ module.exports = {
             // ./public directory is being served
             host: 'localhost',
             port: 3000,
-            server: { baseDir: ['dist'] }
+            server: {  }
           }),
     ]
 };
