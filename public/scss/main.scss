@@ -1,8 +1,5 @@
-body{
-    background: skyblue;    
+@import "common/variables";
 
-    A{
-        display: block;
-        border: 1px solid orange;
-    }
+body{
+    background: $main-color;
 }
