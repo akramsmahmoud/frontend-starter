@@ -1,0 +1,15 @@
+{
+    "name": "Frontend Starter",
+    "short_name": "Chroma",
+    "icons": [{
+        "src": "./dist/images/domain.jpg",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "start_url": "/?homescreen=1",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff"
+}
