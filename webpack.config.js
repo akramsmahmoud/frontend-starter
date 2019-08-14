@@ -45,7 +45,7 @@ module.exports = {
                      options: {
                          limit: 8000,
                          name: 'images/[hash]-[name].[ext]',
-                         publicPath: 'assets',
+                         publicPath: 'public/images',
                      }
                  }]
              }
@@ -62,7 +62,7 @@ module.exports = {
             template: './public/index.html',
             filename: '../index.html'
         }),
-        new WebpackMd5Hash(),
+        //new WebpackMd5Hash(),
         new BrowserSyncPlugin({
             // browse to http://localhost:3000/ during development,
             // ./public directory is being served
@@ -70,15 +70,15 @@ module.exports = {
             port: 3000,
             server: {  }
         }),
-         new CopyWebpackPlugin([{
-             from: 'public/images',
-             to: 'images'
-         }]),
-          new ImageminPlugin({
-              disable: false,
-              pngquant: {
-                  quality: [0.3, 0.5]
-              },
-          })
+        new CopyWebpackPlugin([{
+            from: 'public/images',
+            to: 'images'
+        }]),
+        new ImageminPlugin({
+            disable: false,
+            pngquant: {
+                quality: [0.3, 0.5]
+            },
+        })
     ]
 };

@@ -5,6 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="manifest" href="/manifest.json">
 
     <meta name="description" content="Frontend Project starter">
 
@@ -25,6 +27,13 @@
     
     
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('./sw.js')
+                .then(function () { console.log("Service Worker Registered"); });
+        }
+    </script>
 </body>
 
 </html>
