@@ -1,7 +1,7 @@
 import '../scss/main.scss';
 
-import generatePrime from '../js/common/header'
+import generatePrime from './common/header'
+import lazyload from './common/lazyload'
 
-console.log("Akram MAsr");
-console.log("Akram MAsr");
+new lazyload().init();
 
