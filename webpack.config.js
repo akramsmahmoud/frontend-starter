@@ -5,7 +5,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require("webpack-md5-hash");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+
 
 
 module.exports = {
@@ -34,7 +37,18 @@ module.exports = {
                    "css-loader",
                    "sass-loader"
                ]
-            }
+            },
+             {
+                 test: /\.(png|jp(e*)g|svg)$/,
+                 use: [{
+                     loader: 'url-loader',
+                     options: {
+                         limit: 8000,
+                         name: 'images/[hash]-[name].[ext]',
+                         publicPath: 'assets',
+                     }
+                 }]
+             }
         ]
     },
     plugins: [        
@@ -55,6 +69,16 @@ module.exports = {
             host: 'localhost',
             port: 3000,
             server: {  }
-          }),
+        }),
+         new CopyWebpackPlugin([{
+             from: 'public/images',
+             to: 'images'
+         }]),
+          new ImageminPlugin({
+              disable: false,
+              pngquant: {
+                  quality: [0.3, 0.5]
+              },
+          })
     ]
 };

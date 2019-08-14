@@ -1,3 +1,10 @@
 body {
-  background: #DDD; }
+  background: #DDD;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 750vh; }
+  body img {
+    display: block;
+    max-width: 100%; }
 

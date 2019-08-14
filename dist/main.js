@@ -127,7 +127,19 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.generatePrime = exports.isPrime = undefined;\n\nvar _lodash = __webpack_require__(/*! lodash */ \"lodash\");\n\nvar _lodash2 = _interopRequireDefault(_lodash);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst isPrime = exports.isPrime = n => {\n  return n !== 1 && !_lodash2.default.some(_lodash2.default.map(_lodash2.default.range(2, n - 1), i => n % i === 0)) || n == 2;\n};\n\nconst generatePrime = exports.generatePrime = (start, end) => _lodash2.default.range(start, end + 1).filter(isPrime);\n\n//# sourceURL=webpack:///./public/js/common/header.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\n//import _ from 'lodash'\nconst isPrime = exports.isPrime = n => {\n  return n !== 1 && !_.some(_.map(_.range(2, n - 1), i => n % i === 0)) || n == 2;\n};\n\nconst generatePrime = exports.generatePrime = (start, end) => _.range(start, end + 1).filter(isPrime);\n\n//# sourceURL=webpack:///./public/js/common/header.js?");
+
+/***/ }),
+
+/***/ "./public/js/common/lazyload.js":
+/*!**************************************!*\
+  !*** ./public/js/common/lazyload.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nclass lazyload {\n  init() {\n    if ('loading' in HTMLImageElement.prototype) {\n      const images = document.querySelectorAll(\"img.lazyload\");\n      images.forEach(img => {\n        img.src = img.dataset.src;\n      });\n    } else {\n      // Dynamically import the LazySizes library\n      let script = document.createElement(\"script\");\n      script.async = true;\n      script.src = \"https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js\";\n      document.body.appendChild(script);\n    }\n  }\n\n}\n\nexports.default = lazyload;\n\n//# sourceURL=webpack:///./public/js/common/lazyload.js?");
 
 /***/ }),
 
@@ -139,7 +151,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ../scss/main.scss */ \"./public/scss/main.scss\");\n\nvar _header = __webpack_require__(/*! ../js/common/header */ \"./public/js/common/header.js\");\n\nvar _header2 = _interopRequireDefault(_header);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconsole.log(\"Akram MAsr\");\nconsole.log(\"Akram MAsr\");\n\n//# sourceURL=webpack:///./public/js/main.js?");
+eval("\n\n__webpack_require__(/*! ../scss/main.scss */ \"./public/scss/main.scss\");\n\nvar _header = __webpack_require__(/*! ./common/header */ \"./public/js/common/header.js\");\n\nvar _header2 = _interopRequireDefault(_header);\n\nvar _lazyload = __webpack_require__(/*! ./common/lazyload */ \"./public/js/common/lazyload.js\");\n\nvar _lazyload2 = _interopRequireDefault(_lazyload);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nnew _lazyload2.default().init();\n\n//# sourceURL=webpack:///./public/js/main.js?");
 
 /***/ }),
 
@@ -151,17 +163,6 @@ eval("\n\n__webpack_require__(/*! ../scss/main.scss */ \"./public/scss/main.scss
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("\nvar content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/lib/loader.js!./main.scss */ \"./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./public/scss/main.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./public/scss/main.scss?");
-
-/***/ }),
-
-/***/ "lodash":
-/*!*************************!*\
-  !*** external "lodash" ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = require(\"lodash\");\n\n//# sourceURL=webpack:///external_%22lodash%22?");
 
 /***/ })
 
