@@ -1,6 +1,6 @@
 {
     "name": "Frontend Starter",
-    "short_name": "Chroma",
+    "short_name": "frontend-starter",
     "icons": [{
         "src": "./dist/images/domain.jpg",
         "sizes": "512x512",

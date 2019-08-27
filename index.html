@@ -4,29 +4,29 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#FFFFFF" />
     <link rel="manifest" href="/manifest.json">
 
     <meta name="description" content="Frontend Project starter">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="dist/style.css?6573433199fd204c7870" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="dist/main.css?48c674b181aa5bebd93d" media="print" onload="this.media='all'">
 
     <title>Frontend Starter</title>
 </head>
 
-<body>
-    <img data-src="public/images/my.jpg" alt="Test native lazy loading" loading="lazy" class="lazyload">
-    <div>Hello, world!</div>
-    <a href="GOOGLE.COM">Masr masr</a>
+<body class="home">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
+    <h1>Hello, World!</h1>
+    <img data-src="./dist/images/ex.jpg" class="lazyload img-responsive" alt="Test" loading="lazy">
     
-
-    
-    <img data-src="public/images/ex.jpg" alt="Test native lazy loading" loading="lazy" class="lazyload">
-    
-    
-    <script src="dist/main.js?6573433199fd204c7870"></script>
+    <script src="dist/main.js?48c674b181aa5bebd93d"></script>
+    <!-- Check if service worker exists and register it -->
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker
@@ -35,5 +35,4 @@
         }
     </script>
 </body>
-
 </html>
