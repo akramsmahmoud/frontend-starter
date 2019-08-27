@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "webpack --watch --mode development",
     "build": "webpack --mode production",
-    "test": "cross-env NODE_ENV=test nyc --all mocha ./assets/**/*.spec.js js:babel-register"
+    "test": "cross-env NODE_ENV=test nyc --all mocha ./assets/scripts/**/*.spec.js js:babel-register"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
