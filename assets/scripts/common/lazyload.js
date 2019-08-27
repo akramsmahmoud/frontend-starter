@@ -1,5 +1,5 @@
  class lazyload {
-     init() {
+     constructor() {
         if ('loading' in HTMLImageElement.prototype) {
             const images = document.querySelectorAll("img.lazyload");
             images.forEach(img => {

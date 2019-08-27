@@ -1,7 +1,7 @@
 import {
     isPrime,
     generatePrime
-} from './header'
+} from '../common/header'
 import assert from 'power-assert'
 
 describe('Prime', () => {
