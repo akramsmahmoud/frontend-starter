@@ -32,7 +32,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.5.0",
     "mocha": "^6.2.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "nyc": "^14.1.1",
     "postcss-loader": "^3.0.0",
     "power-assert": "^1.4.2",
